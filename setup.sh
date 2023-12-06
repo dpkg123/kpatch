@@ -39,7 +39,7 @@ return 0
 
 test -f hook-414.patch || wget https://github.com/dpkg123/kpatch/raw/main/hook.patch
 
-KERNEL_CONFIG="$(pwd)/arch/$CARCH/configs/$1"
+export KERNEL_CONFIG="$(pwd)/arch/$CARCH/configs/$1"
 grep -q "CONFIG_KPROBES=y" "KERNEL_CONFIG" || git apply hook.patch
 rm -rf hook.patch
 
