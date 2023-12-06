@@ -1,6 +1,11 @@
 name: 'LXC Setup Action'
 description: "A action."
 
+inputs:
+  config:
+    description: 'confif'
+    required: true
+    default: defconfig
 runs:
   using: 'composite'
   steps:
@@ -8,4 +13,4 @@ runs:
       shell: bash
       run: |
         chmod a+x $GITHUB_ACTION_PATH/setup.sh
-        bash $GITHUB_ACTION_PATH/setup.sh
+        bash $GITHUB_ACTION_PATH/setup.sh ${{ inputs.config }}
