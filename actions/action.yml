@@ -1,0 +1,11 @@
+name: 'LXC Setup Action'
+description: "A action."
+
+runs:
+  using: 'composite'
+  steps:
+    - name: 'LXC'
+      shell: bash
+      run: |
+        chmod a+x $GITHUB_ACTION_PATH/setup.sh
+        bash $GITHUB_ACTION_PATH/setup.sh
