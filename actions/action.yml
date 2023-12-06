@@ -6,6 +6,7 @@ inputs:
     description: 'confif'
     required: true
     default: defconfig
+    
 runs:
   using: 'composite'
   steps:
